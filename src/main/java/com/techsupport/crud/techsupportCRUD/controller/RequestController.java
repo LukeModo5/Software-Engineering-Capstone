@@ -49,6 +49,7 @@ public class RequestController {
 
     @PostMapping("/saveRequest")
     public String saveRequest(@Valid SupportRequest request, BindingResult bindingResult, RedirectAttributes redirectAttributes){
+        //If user enters invalid info, save request object and binding result in flash attribute to keep data and display error msg
         if(bindingResult.hasErrors()){
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.request", bindingResult);
             redirectAttributes.addFlashAttribute("request", request);

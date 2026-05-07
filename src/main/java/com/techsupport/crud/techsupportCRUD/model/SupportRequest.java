@@ -8,6 +8,8 @@ import org.springframework.validation.annotation.Validated;
 
 import java.time.LocalDateTime;
 
+//Parent SupportRequest class, all requests made will be a supportRequest
+
 @Entity
 @Table(name="requests")
 public class SupportRequest {

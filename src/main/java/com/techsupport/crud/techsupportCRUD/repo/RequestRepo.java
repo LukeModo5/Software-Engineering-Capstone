@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDateTime;
 import java.util.List;
 
+//Support Request Repository
+
 @Repository
 public interface RequestRepo extends JpaRepository<SupportRequest, Long> {
     @Query("SELECT s FROM SupportRequest s WHERE s.name LIKE %?1%")
