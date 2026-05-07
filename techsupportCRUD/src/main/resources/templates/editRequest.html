@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>Senior Tech Solutions</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/viewRequests}">View Requests</a></li>
+        </ul>
+    </nav>
+
+    <form th:action="@{/editSaveRequest}" th:object="${request}" method="post">
+
+        <input type="hidden" th:field="*{id}" readonly>
+
+        <label for="name">Name (First and Last)</label>
+        <input type="text" id="name" placeholder="Your name (first and last)" th:field="*{name}" required readonly>
+        <br><br>
+
+        <label for="number">Phone Number</label>
+        <input type="tel" id="number" placeholder="(123)-456-7890" th:field="*{phoneNumber}" required readonly>
+        <br><br>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" th:field="*{email}" readonly>
+        <br><br>
+
+        <label>Device Type</label>
+        <input type="text" th:field="*{deviceType}" readonly>
+        <br><br>
+
+        <label for="issue">Issue Description</label>
+        <textarea rows="10" cols="50" id="issue" placeholder="Describe the issue..." th:field="*{issueDescription}" required readonly></textarea>
+        <br><br>
+
+        <label for="urgent">Urgent Request?</label>
+        <input type="checkbox" id="urgent" th:field="*{urgent}" disabled>
+        <br><br>
+
+        <label>Status</label>
+        <select th:field="*{status}">
+            <option value="Open">Open</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Closed">Closed</option>
+        </select>
+
+
+            <button type="submit">Update Request</button>
+
+    </form>
+
+    <p th:text="${message}"></p>
+
+</div>
+
+</body>
+</html>

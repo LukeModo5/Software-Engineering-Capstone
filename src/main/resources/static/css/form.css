@@ -1,0 +1,246 @@
+/*body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px); /* accounts for navbar height
+}
+
+h2 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    padding: 0;
+    border: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.875rem;
+}
+
+.submit-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #218838;
+}*/
+
+html{
+    font-family: 'Times New Roman', Serif;
+    font-size: 18px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+html, body {
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #0e0e32;
+}
+
+.form-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+form{
+    border: 1px solid white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-label, .form-check-label{
+    color: black;
+    padding: 6px;
+}
+
+.mb-3{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-check{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding-left: 4px;
+    width: 100%;
+}
+
+h2{
+    color: black;
+    text-align: center;
+}
+
+.search-form{
+    background-color: #0e0e32;
+    border-color: #0e0e32;
+    box-shadow: none;
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+form{
+    background-color: white;
+}
+
+table.table-hover > tbody > tr:hover > td {
+    background-color: #cbdcff !important;
+}
+
+td.description-cell {
+    max-width: 200px;
+    word-wrap: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+.btn-link {
+    display: inline-block;
+    background-color: #0e0e32;
+    color: white;
+    border: black;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-link:hover {
+    background-color: #2e7df7;
+    color: white;
+}
+
+.nav-logout-form{
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.request-table{
+    margin: 30px;
+    width: 75%;
+}
+
+table{
+    width: 90%;
+}
+
+.site-footer {
+    background-color: #5a55e3;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.site-footer{
+    margin-top: auto;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+    padding: 4px 10px;
+    border: 2px solid white;
+    border-radius: 6px;
+}
+
+.footer-tagline {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+.footer-copy {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
+caption {
+    caption-side: top;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/form.css}">
+    <title>Support Requests</title>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a class="nav-brand" th:href="@{/createRequest}">
+            <div class="nav-brand-icon">STS</div>
+            <span class="nav-brand-name">Senior Tech Solutions</span>
+        </a>
+        <ul class="nav-links">
+            <li sec:authorize="!isAuthenticated()">
+                <a class="nav-btn-login" th:href="@{/login}">Technician Login</a>
+            </li>
+            <li sec:authorize="isAuthenticated()">
+                <a th:href="@{/viewRequests}">View Requests</a>
+            </li>
+            <li sec:authorize="isAuthenticated()" class="nav-divider"></li>
+            <li sec:authorize="isAuthenticated()">
+                <form class="nav-logout-form" th:action="@{/logout}" method="post">
+                    <button class="nav-btn-logout" type="submit">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="form-wrapper">
+    <div class="form-container">
+        <form id="requestForm" th:action="@{/saveRequest}" th:object="${request}" method="post">
+
+            <input type="hidden" th:field="*{id}">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your name (first and last)" th:field="*{name}" required>
+            </div>
+            <div class="form-group">
+                <label for="number">Phone Number</label>
+                <input type="text" id="number" placeholder="1234567890" th:field="*{phoneNumber}">
+                <span class="error-message" th:errors="*{phoneNumber}" style="color:red"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="johndoe@gmail.com" th:field="*{email}">
+                <span class="error-message" th:errors="*{email}" style="color:red"></span>
+            </div>
+            <div class="form-group">
+                <label for="device">Device Type</label>
+                <select id="device" th:field="*{deviceType}" required>
+                    <option value="">Select a device</option>
+                    <option value="Smartphone">Smartphone</option>
+                    <option value="Tablet">Tablet</option>
+                    <option value="Computer">Computer</option>
+                    <option value="Smart TV/TV">Smart TV/TV</option>
+                    <option value="Internet/Wi-Fi">Internet/Wi-Fi</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="issue">Issue Description</label>
+                <textarea id="issue" placeholder="Describe the issue..." th:field="*{issueDescription}" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="urgent">Urgent Request?</label>
+                <input type="checkbox" id="urgent" th:field="*{urgent}">
+                <span>Yes</span>
+            </div>
+
+            <button class="submit-button" type="submit">Submit Request</button>
+
+            <p th:text="${message}"></p>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

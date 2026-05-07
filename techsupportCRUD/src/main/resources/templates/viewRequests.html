@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Requests</title>
+</head>
+<body>
+
+<a th:href="@{/createRequest}">Add new Request</a>
+
+<form th:action="@{/searchRequests}" method="get">
+    <input type="text" name="keyword" th:value="${keyword}" placeholder="Search by customer name">
+    <button type="submit">Search</button>
+</form>
+
+<a th:href="@{/viewRequests}">Clear Search</a>
+<a th:href="@{/report}">Report</a>
+
+<div>
+    <table border="1">
+        <thead>
+        <tr>
+        <tr>
+            <th>Customer Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Device Type</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Date/Time Created</th>
+            <th>Urgent?</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="request : ${reqList}">
+            <td th:text="${request.name}"></td>
+            <td th:text="${request.phoneNumber}"></td>
+            <td th:text="${request.email}"></td>
+            <td th:text="${request.deviceType}"></td>
+            <td th:text="${request.issueDescription}"></td>
+            <td th:text="${request.status}"></td>
+            <td th:text="${#temporals.format(request.getDateCreated(), 'MM/dd/yyyy HH:mm')}"></td>
+            <td th:text="${request.urgent} ? 'Yes' : 'No'"></td>
+            <td>
+                <button><a th:href="@{/deleteRequest/{id}(id=${request.id})}">Delete</a></button>
+                <button><a th:href="@{/editRequest/{id}(id=${request.id})}">Update</a></button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Logout</button>
+    </form>
+</div>
+
+<p th:text="${message}"></p>
+
+</body>
+</html>

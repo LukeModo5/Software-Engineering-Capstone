@@ -1,0 +1,44 @@
+nav.navbar{
+    background-color: #5a55e3 !important;
+    position: relative;
+    font-size: 20px;
+}
+
+.navbar-nav .nav-link{
+    color: white;
+}
+
+nav.navbar a:hover{
+    color: black !important;
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 3px;
+    padding: 4px 10px;
+    border: 2px solid white;
+    border-radius: 6px;
+}
+
+.nav-brand{
+    text-decoration: none;
+    z-index: 1;
+}
+
+nav.navbar .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav.navbar .navbar-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-logout-form {
+    margin-left: auto;
+}
