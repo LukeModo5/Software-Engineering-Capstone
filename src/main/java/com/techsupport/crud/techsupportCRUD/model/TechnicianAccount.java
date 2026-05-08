@@ -18,6 +18,7 @@ public class TechnicianAccount {
     private String password;
 
     public TechnicianAccount(){
+
     }
 
     public Long getId() {return id;}

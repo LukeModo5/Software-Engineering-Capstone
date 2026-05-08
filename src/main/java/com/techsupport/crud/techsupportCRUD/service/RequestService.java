@@ -26,6 +26,7 @@ public class RequestService {
         return requestRepo.findById(id).get();
     }
 
+    //If user selected urgent, create an UrgentSupportRequest, otherwise save the request
     public boolean saveRequest(SupportRequest request){
         if(request.isUrgent()){
             UrgentSupportRequest urgentRequest = new UrgentSupportRequest();
@@ -76,6 +77,7 @@ public class RequestService {
         return false;
     }
 
+    //Methods for report
     public long requestCount(){
         return requestRepo.count();
     }

@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
 public interface TechnicianRepo extends JpaRepository<TechnicianAccount, Long> {
     TechnicianAccount findByUsername(String username);
 
+
 }

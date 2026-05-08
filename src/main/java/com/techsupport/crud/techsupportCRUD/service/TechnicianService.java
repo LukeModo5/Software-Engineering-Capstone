@@ -29,6 +29,7 @@ public class TechnicianService implements UserDetailsService {
                 .password(account.getPassword())
                 .roles("TECHNICIAN")
                 .build();
+
     }
 
 }
