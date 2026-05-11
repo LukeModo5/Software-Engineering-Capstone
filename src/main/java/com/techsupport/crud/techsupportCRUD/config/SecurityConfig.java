@@ -36,12 +36,12 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**").permitAll()
-                        .requestMatchers("/login", "/", "/createRequest", "/about", "/saveRequest").permitAll()
+                        .requestMatchers("/login", "/","/createRequest", "/about", "/saveRequest").permitAll()
                         .requestMatchers("/viewRequests", "/report", "/editRequest").authenticated()
                         .anyRequest().authenticated()
         )
                 .formLogin(form -> form
-                        .loginPage("/createRequest")
+                        .loginPage("/login")
                         .defaultSuccessUrl("/viewRequests", true)
                         .failureUrl("/login?error=true")
                         .permitAll()).logout
