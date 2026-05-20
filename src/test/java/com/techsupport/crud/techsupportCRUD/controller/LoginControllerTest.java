@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -20,6 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
+@ActiveProfiles("local")
 public class LoginControllerTest {
 
     @Autowired
@@ -49,5 +51,17 @@ public class LoginControllerTest {
                         .password("password", "anyPassword"))
                 .andExpect(status().is3xxRedirection())
                 .andExpect(redirectedUrl("/login?error=true"));
+    }
+
+    @Test
+    void login_withCorrectCredentials_redirectsToViewRequests() throws Exception {
+        when(technicianService.loadUserByUsername("tech1"))
+                .thenReturn(buildUser("tech1", "securePass123"));
+
+        mockMvc.perform(formLogin("/login")
+                        .user("username", "tech1")
+                        .password("password", "securePass123"))
+                .andExpect(status().is3xxRedirection())
+                .andExpect(redirectedUrl("/viewRequests"));
     }
 }
