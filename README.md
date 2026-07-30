@@ -47,10 +47,8 @@ DATABASE_PASSWORD=<your_password>
 Visit http://localhost:8080 to submit a request, or http://localhost:8080/login to sign in as a technician.  
 Running with Docker  
 docker build -t techsupport-crud .  
-docker run -p 8080:8080 \  
--e DATABASE_URL=jdbc:postgresql://<host>:5432/<db> \  
--e DATABASE_USERNAME=<username> \  
--e DATABASE_PASSWORD=<password> \  
+docker run -p 8080:8080    
+Message me for database credentials  
 techsupport-crud  
 Running Tests  
 ./mvnw test  
