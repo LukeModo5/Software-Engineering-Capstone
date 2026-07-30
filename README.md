@@ -1,4 +1,3 @@
-
 # Tech Support Ticketing System
 
 A full-stack web application for managing customer tech support tickets, built as a Software Engineering capstone project. Technicians can log in to view, search, update, and resolve support requests submitted by customers, with urgent requests flagged and tracked separately.
