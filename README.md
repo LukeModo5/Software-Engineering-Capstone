@@ -1,15 +1,14 @@
-# Heading
-Tech Support Ticketing System
+
+# Tech Support Ticketing System
 
 A full-stack web application for managing customer tech support tickets, built as a Software Engineering capstone project. Technicians can log in to view, search, update, and resolve support requests submitted by customers, with urgent requests flagged and tracked separately.
 
 ##
-# Heading
-Live demo: https://d424-software-engineering-capstone-fgqn.onrender.com
+
+# Live demo: https://d424-software-engineering-capstone-fgqn.onrender.com
 
 ##
-# Heading
-Features
+# Features
 Public ticket submission — customers submit a support request (name, phone, email, device type, issue description) without needing an account, with server-side validation on all fields
 Urgent request handling — requests can be flagged as urgent, which routes them into a dedicated request type for faster triage
 Technician authentication — Spring Security with BCrypt-hashed credentials and form-based login/logout; only authenticated technicians can view, search, or manage tickets
@@ -17,8 +16,7 @@ Ticket management — technicians can search requests by keyword, update ticket 
 Reporting dashboard — aggregate view of ticket volume by status and device type, most common device type, most recent request, requests created today, and total urgent request count
 
 ##
-# Heading
-Tech Stack
+******** Tech Stack
 Backend: Java 17, Spring Boot 3.4.5, Spring Data JPA, Spring Security
 Frontend: Thymeleaf, HTML/CSS
 Database: PostgreSQL
