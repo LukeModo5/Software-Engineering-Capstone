@@ -5,7 +5,7 @@ A full-stack web application for managing customer tech support tickets, built a
 
 ##
 
-# Live demo: https://d424-software-engineering-capstone-fgqn.onrender.com
+Live demo: https://d424-software-engineering-capstone-fgqn.onrender.com
 
 ##
 # Features
@@ -16,7 +16,7 @@ Ticket management — technicians can search requests by keyword, update ticket 
 Reporting dashboard — aggregate view of ticket volume by status and device type, most common device type, most recent request, requests created today, and total urgent request count
 
 ##
-******** Tech Stack
+# Tech Stack
 Backend: Java 17, Spring Boot 3.4.5, Spring Data JPA, Spring Security
 Frontend: Thymeleaf, HTML/CSS
 Database: PostgreSQL
@@ -24,16 +24,15 @@ Testing: JUnit, Mockito, MockMvc, Spring Security Test
 Deployment: Docker, Render
 
 ##
-# Heading
-Getting Started
+# Getting Started
 Prerequisites
 Java 17
 Maven (or use the included mvnw wrapper)
 PostgreSQL (local instance, or a connection string from a hosted provider)
 
 ##
-# Heading
-Local Setup
+
+# Local Setup
 Clone the repo:
 git clone https://github.com/LukeModo5/Software-Engineering-Capstone.git
 cd Software-Engineering-Capstone
@@ -43,8 +42,7 @@ DATABASE_USERNAME=<your_username>
 DATABASE_PASSWORD=<your_password>
 
 ##
-# Heading
-Run the app:
+# Run the app:
 ./mvnw spring-boot:run
 Visit http://localhost:8080 to submit a request, or http://localhost:8080/login to sign in as a technician.
 Running with Docker
@@ -65,13 +63,11 @@ src/main/java/com/techsupport/crud/techsupportCRUD/
 └── service/      Business logic for requests and technician accounts
 
 ##
-# Heading
 To login as a technician use these credentials
 Username: Admin
 Password: password
 
 ##
-# Heading
 Author
 Luke Modory — github.com/LukeModo5
 
